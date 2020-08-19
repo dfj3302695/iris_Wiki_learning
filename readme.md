@@ -1,4 +1,5 @@
-##day01
+# iris Wiki 翻译与学习
+## 示例都以go module 方式
 * 两个iris sample 起手式  
     * [sample1](iris_wiki/sample-1/example.go)
     * [sample2](iris_wiki/sample-2/sampe2.go)  
