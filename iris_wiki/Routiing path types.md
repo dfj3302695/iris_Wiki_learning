@@ -42,19 +42,13 @@ app.Get("/users/{id:uint64}", func(ctx iris.Context){
 
 | Built\-in Func   | Param Types        |
 |:----------       |:------------|
-| 
-regexp\(expr string\)                                                                                                           | :string                                                                                               |
-| 
-prefix\(prefix string\)                                                                                                         | :string                                                                                               |
-| 
-suffix\(suffix string\)                                                                                                         | :string                                                                                               |
-| 
-contains\(s string\)                                                                                                            | :string                                                                                               |
-| 
-min\(minValue int or int8 or int16 or int32 or int64 or uint8 or uint16 or uint32 or uint64  or float32 or float64\)            | :string\(char length\), :int, :int8, :int16, :int32, :int64, :uint, :uint8, :uint16, :uint32, :uint64 |
+| regexp\(expr string\)                       | :string                                                                                               |
+| prefix\(prefix string\)                                         | :string                                                                                               |
+| suffix\(suffix string\)                                                    | :string                                                                                               |
+| contains\(s string\)                                | :string                                                                                               |
+| min\(minValue int or int8 or int16 or int32 or int64 or uint8 or uint16 or uint32 or uint64  or float32 or float64\)            | :string\(char length\), :int, :int8, :int16, :int32, :int64, :uint, :uint8, :uint16, :uint32, :uint64 |
 | max\(maxValue int or int8 or int16 or int32 or int64 or uint8 or uint16 or uint32 or uint64 or float32 or float64\)              | :string\(char length\), :int, :int8, :int16, :int32, :int64, :uint, :uint8, :uint16, :uint32, :uint64 |
-| 
-range\(minValue, maxValue int or int8 or int16 or int32 or int64 or uint8 or uint16 or uint32 or uint64 or float32 or float64\) | :int, :int8, :int16, :int32, :int64, :uint, :uint8, :uint16, :uint32, :uint64                         |
+| range\(minValue, maxValue int or int8 or int16 or int32 or int64 or uint8 or uint16 or uint32 or uint64 or float32 or float64\) | :int, :int8, :int16, :int32, :int64, :uint, :uint8, :uint16, :uint32, :uint64                         |
 
 #### 用法：
 ```go
