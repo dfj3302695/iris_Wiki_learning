@@ -20,7 +20,7 @@ type Handler func(iris.Context)
 或者在views中匹配相对路径。更多信息，
 请查看[Reverse lookups](https://github.com/kataras/iris/wiki/Routing-reverse-lookups) 部分。
 
-##行为
+## 行为
 Iris的默认行为是接受和注册路径为/api/user的路由，没有尾部的斜杠，
 如果客户端试图到达$your_host/api/user/，那么Iris路由器会自动将其重定向到$your_host/api/user，
 以便由Iris路由器处理。如果客户端试图访问$your_host/api/user/，
@@ -40,7 +40,7 @@ app.Listen(":8080", iris.WithoutPathCorrection)
 app.Listen(":8080", iris.WithoutPathCorrectionRedirection)
 ```
 
-##API
+## API
 支持所有的HTTP方法，开发者也可以在同一路径上用不同的方法注册处理程序。
 
 第一个参数是HTTP方法，第二个参数是路由的请求路径，第三个变量参数应该包含一个或多个iris.Handler，当客户端向服务器请求该特定的resouce路径时，由注册的命令执行。
@@ -97,21 +97,21 @@ func handler(ctx iris.Context){
 }
 ```
 
-###Offline Routes
+### Offline Routes
 在Iris中，有一个特殊的方法，你也可以使用。它叫做None，你可以用它来隐藏一个路由，不让外人看到，
 但仍然能够通过Context.Exec方法从其他路由的处理程序中调用它。每个API Handle方法都会返回Route值。
 一个Route的IsOnline方法，会回报该路由的当前状态。你可以通过它的Route.Method字段的值，
 将路由的状态从离线变为在线，反之亦然。当然每次在服务时改变路由器都需要调用app.RefreshRouter()，
 这样使用起来才安全。下面来看一个比较完整的例子。  
 [Offline Routes 例子](./sample3/main.go)
-####How to run
+#### How to run
 1. go run main.go
 2. Open a browser at http://localhost:8080/invisible/iris and you'll see that you get a 404 not found error,
 3. however the http://localhost:8080/execute will be able to execute that route.
 4. Now, if you navigate to the http://localhost:8080/change and refresh the 
 /invisible/iris tab you'll see that you can see it.
 
-##Routes组
+## Routes组
 一组被路径前缀的路由可以（可选择）共享相同的中间件处理程序和模板布局。一个组也可以有一个嵌套组。
 
 .Party被用来对路由进行分组，开发者可以声明无限数量的（嵌套）组。

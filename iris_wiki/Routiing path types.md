@@ -32,7 +32,7 @@ Context的本地存储可以用于处理程序和中间件之间的通信，可�
 | :file         | string  | lowercase or uppercase letters, numbers, underscore \(\_\), dash \(\-\), point \(\.\) and no spaces or other special characters that are not valid for filenames | Params\(\)\.Get       |
 | :path         | string  | anything, can be separated by slashes \(path segments\) but should be the last part of the route path                                                            | Params\(\)\.Get       |
 
-####用法：
+#### 用法：
 ```go
 app.Get("/users/{id:uint64}", func(ctx iris.Context){
     id := ctx.Params().GetUint64Default("id", 0)
@@ -40,8 +40,8 @@ app.Get("/users/{id:uint64}", func(ctx iris.Context){
 })
 ```
 
-| Built\-in Func                                                                                                                   | Param Types                                                                                           |
-|----------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------|
+| Built\-in Func   | Param Types        |
+|:----------       |:------------|
 | 
 regexp\(expr string\)                                                                                                           | :string                                                                                               |
 | 
@@ -56,7 +56,7 @@ min\(minValue int or int8 or int16 or int32 or int64 or uint8 or uint16 or uint3
 | 
 range\(minValue, maxValue int or int8 or int16 or int32 or int64 or uint8 or uint16 or uint32 or uint64 or float32 or float64\) | :int, :int8, :int16, :int32, :int64, :uint, :uint8, :uint16, :uint32, :uint64                         |
 
-####用法：
+#### 用法：
 ```go
 app.Get("/profile/{name:alphabetical max(255)}", func(ctx iris.Context){
     name := ctx.Params().Get("name")
@@ -64,7 +64,7 @@ app.Get("/profile/{name:alphabetical max(255)}", func(ctx iris.Context){
     // and this handler will not be executed at all.
 })
 ```
-####自己动手:
+#### 自己动手:
 RegisterFunc可以接受任何返回func(paramValue string)bool的函数。
 或者只是一个func(string) bool。如果验证失败，那么它将发射404或任何其他关键字的状态码。
 ```go
@@ -118,7 +118,7 @@ func(ctx iris.Context) {
 })
 
 ```
-####示例代码：
+#### 示例代码：
 ```go
 func main() {
     app := iris.Default()
